@@ -42,7 +42,7 @@ Create Docker Container:
 $ cd .devcontainer
 $ docker-compose up 
 
-docker exec -it restapi_web bash
+docker exec -it restapi bash
 ```
 
 Install the composer dependencies:
