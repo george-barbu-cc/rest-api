@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "a38610fb-9709-481e-adc8-dbc49edd9a70",
+		"name": "Anwaltde",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21536276"
+	},
+	"item": [
+		{
+			"name": "rest-api",
+			"item": [
+				{
+					"name": "/token/create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "username@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/token/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"token",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/load",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/barbu/Downloads/sample_file.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/load?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"load"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/sellers/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/sellers/{{seller_id}}?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"sellers",
+								"{{seller_id}}"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/sellers/{id}/contacts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/barbu/Downloads/sample_file.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/sellers/{{seller_id}}/contacts?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"sellers",
+								"{{seller_id}}",
+								"contacts"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/sellers/{id}/sales",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/sellers/{{seller_id}}/sales?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"sellers",
+								"{{seller_id}}",
+								"sales"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/sales/{year}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/sales/{{sales_year}}?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"sales",
+								"{{sales_year}}"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:8000"
+		},
+		{
+			"key": "token",
+			"value": "1|QivoSE9FUXcu5tS5RBef8gKg0LGbKMqRGHhLM1gs"
+		},
+		{
+			"key": "seller_id",
+			"value": "21"
+		},
+		{
+			"key": "sales_year",
+			"value": "2021"
+		}
+	]
+}
